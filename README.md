@@ -28,12 +28,13 @@ Ensure you have the following installed:
 
 ```bash
 git clone https://github.com/emmanuel-martin/dynamic-form-rendering-royal-class-test.git
+> **WARNING**: use npm install --legacy-peer-deps
 
 ### 2. Install Dependencies (use --legacy-peer-deps)
 ```bash
-npm install
+npm install --legacy-peer-deps
 # or
-yarn install
+yarn install --legacy-peer-deps
 ```
 
 ### 3. Install Specific Libraries
