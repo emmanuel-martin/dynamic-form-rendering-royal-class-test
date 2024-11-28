@@ -29,7 +29,7 @@ Ensure you have the following installed:
 ```bash
 git clone https://github.com/emmanuel-martin/dynamic-form-rendering-royal-class-test.git
 
-### 2. Install Dependencies
+### 2. Install Dependencies (use --legacy-peer-deps)
 ```bash
 npm install
 # or
