@@ -1,36 +1,151 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Royal Class - Dynamic Form Rendering
 
-## Getting Started
+## Description
 
-First, run the development server:
+This is a Next.js project that demonstrates the usage of various modern frontend libraries and tools including `ShadCN UI`, `TanStack Query`, `React Hook Form`, and `Framer Motion`. It integrates functionalities like form handling, data fetching, and UI transitions to provide an interactive and user-friendly experience. The project also includes toast notifications and form validation using `zod`.
 
+### Features
+
+- **Data Fetching and Mutation** using TanStack Query (`useQuery`, `useMutation`)
+- **UI Components** from `ShadCN UI`
+- **Form Validation** with `zod` and `react-hook-form`
+- **Smooth UI Animations** powered by `Framer Motion`
+- **Toast Notifications** with `sonner`
+- **Icons** from `Lucide React`
+
+---
+
+## Installation and Setup
+
+### Prerequisites
+
+Ensure you have the following installed:
+
+- Node.js (v14 or higher)
+- npm or yarn (for managing dependencies)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/emmanuel-martin/dynamic-form-rendering-royal-class-test.git
+
+### 2. Install Dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+### 3. Install Specific Libraries
+```bash
+# Shadcn UI
+npx shadcn-ui@latest init
+
+# Tanstack Query
+npm install @tanstack/react-query
+
+# React Hook Form
+npm install react-hook-form @hookform/resolvers
+
+# Zod
+npm install zod
+
+# Sonner (Toasts)
+npm install sonner
+
+# Lucide React (Icons)
+npm install lucide-react
+
+# Framer Motion
+npm install framer-motion
+```
+
+## 🔧 Configuration
+
+### Shadcn UI Initialization
+```bash
+npx shadcn-ui@latest init
+```
+- Follow the prompts to configure your project
+
+### Tanstack Query Setup
+```typescript
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient()
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Component {...pageProps} />
+    </QueryClientProvider>
+  )
+}
+```
+
+## 📝 Key Libraries Usage Examples
+
+### Tanstack Query (useMutation)
+```typescript
+const mutation = useMutation({
+  mutationFn: yourApiCall,
+  onSuccess: () => {
+    toast.success('Operation Successful')
+  },
+  onError: () => {
+    toast.error('Operation Failed')
+  }
+})
+```
+
+### Zod Validation
+```typescript
+const formSchema = z.object({
+  username: z.string().min(2, { message: "Username too short" }),
+  email: z.string().email({ message: "Invalid email" })
+})
+```
+
+### React Hook Form with Zod
+```typescript
+const form = useForm({
+  resolver: zodResolver(formSchema)
+})
+```
+
+## 🚦 Running the Project
+
+### Development Mode
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Production Build
+```bash
+npm run build
+npm run start
+# or
+yarn build
+yarn start
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📂 Project Structure
+```
+/
+├── components/
+├── app/
+├── fragments/
+├── lib/
+├── pages/
+```
 
-## Learn More
+## 📄 License
+Distributed under the MIT License.
 
-To learn more about Next.js, take a look at the following resources:
+## 📞 Contact
+Emmanuel Martin - mail@emmanuell.co
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Project Link: [https://github.com/emmanuel-martin/dynamic-form-rendering-royal-class-test.git](https://github.com/emmanuel-martin/dynamic-form-rendering-royal-class-test.git)
